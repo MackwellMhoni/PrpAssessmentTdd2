@@ -12,7 +12,7 @@ namespace PrpAssessmentTdd
 
         public async Task<decimal> GetTotalInvoiceValueAsync(DateTime start, DateTime end)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
