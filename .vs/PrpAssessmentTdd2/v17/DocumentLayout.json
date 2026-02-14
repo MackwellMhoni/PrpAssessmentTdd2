@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\mackwell.mhoni\\source\\repos\\PrpAssessmentTdd2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{79276FC3-0A21-0251-C7BE-EBE08EC86F63}|PrpAssessmentTdd2.Tests\\PrpAssessmentTdd2.Tests.csproj|c:\\users\\mackwell.mhoni\\source\\repos\\prpassessmenttdd2\\prpassessmenttdd2.tests\\invoicesummaryservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79276FC3-0A21-0251-C7BE-EBE08EC86F63}|PrpAssessmentTdd2.Tests\\PrpAssessmentTdd2.Tests.csproj|solutionrelative:prpassessmenttdd2.tests\\invoicesummaryservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CD91A4B6-D6E4-909F-1906-63113A175463}|PrpAssessmentTdd2\\PrpAssessmentTdd2.csproj|c:\\users\\mackwell.mhoni\\source\\repos\\prpassessmenttdd2\\prpassessmenttdd2\\invoicesummaryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD91A4B6-D6E4-909F-1906-63113A175463}|PrpAssessmentTdd2\\PrpAssessmentTdd2.csproj|solutionrelative:prpassessmenttdd2\\invoicesummaryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79276FC3-0A21-0251-C7BE-EBE08EC86F63}|PrpAssessmentTdd2.Tests\\PrpAssessmentTdd2.Tests.csproj|c:\\users\\mackwell.mhoni\\source\\repos\\prpassessmenttdd2\\prpassessmenttdd2.tests\\invoicesummaryservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79276FC3-0A21-0251-C7BE-EBE08EC86F63}|PrpAssessmentTdd2.Tests\\PrpAssessmentTdd2.Tests.csproj|solutionrelative:prpassessmenttdd2.tests\\invoicesummaryservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CD91A4B6-D6E4-909F-1906-63113A175463}|PrpAssessmentTdd2\\PrpAssessmentTdd2.csproj|c:\\users\\mackwell.mhoni\\source\\repos\\prpassessmenttdd2\\prpassessmenttdd2\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,28 +50,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "InvoiceSummaryServiceTests.cs",
               "DocumentMoniker": "C:\\Users\\mackwell.mhoni\\source\\repos\\PrpAssessmentTdd2\\PrpAssessmentTdd2.Tests\\InvoiceSummaryServiceTests.cs",
               "RelativeDocumentMoniker": "PrpAssessmentTdd2.Tests\\InvoiceSummaryServiceTests.cs",
               "ToolTip": "C:\\Users\\mackwell.mhoni\\source\\repos\\PrpAssessmentTdd2\\PrpAssessmentTdd2.Tests\\InvoiceSummaryServiceTests.cs",
               "RelativeToolTip": "PrpAssessmentTdd2.Tests\\InvoiceSummaryServiceTests.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAACUAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAewBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-16T06:17:25.297Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "InvoiceSummaryService.cs",
               "DocumentMoniker": "C:\\Users\\mackwell.mhoni\\source\\repos\\PrpAssessmentTdd2\\PrpAssessmentTdd2\\InvoiceSummaryService.cs",
               "RelativeDocumentMoniker": "PrpAssessmentTdd2\\InvoiceSummaryService.cs",
               "ToolTip": "C:\\Users\\mackwell.mhoni\\source\\repos\\PrpAssessmentTdd2\\PrpAssessmentTdd2\\InvoiceSummaryService.cs",
               "RelativeToolTip": "PrpAssessmentTdd2\\InvoiceSummaryService.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAzwA0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T05:56:45.208Z"
+              "WhenOpened": "2026-01-16T05:56:45.208Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

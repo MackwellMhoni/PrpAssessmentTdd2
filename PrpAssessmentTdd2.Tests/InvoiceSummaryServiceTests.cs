@@ -41,20 +41,21 @@ namespace PrpAssessmentTdd.Tests
 			var start = new DateTime(2025, 4, 1);
 			var end = new DateTime(2025, 4, 30);
 
-            var allInvoices = new List<Invoice>();
+            var allInvoices = new List<Invoice>()
             {
-                new Invoice { TotalAmount = 200m };
-                new Invoice { TotalAmount = 50m };
-            }
+                new Invoice { TotalAmount = 200m },
+                new Invoice { TotalAmount = 50m },
+            };
 
 			_repositoryMock
 				.Setup(r => r.GetInvoicesByDateRangeAsync(
 					start, end, false))
-				.ReturnsAsync(new List<Invoice>());
+				.ReturnsAsync(allInvoices);
 
             var service = new InvoiceSummaryService(_repositoryMock.Object);
-			// Act
-			var total = await _service.GetTotalInvoiceValueAsync(start, end);
+			
+            // Act
+			var total = await service.GetTotalInvoiceValueAsync(start, end);
 
 			// Assert
 			Assert.Equal(250m, total);

@@ -12,7 +12,15 @@ namespace PrpAssessmentTdd
 
         public async Task<decimal> GetTotalInvoiceValueAsync(DateTime start, DateTime end)
         {
-            return 0;
-        }
+           
+			var invoices = await _invoiceRepository.GetInvoicesByDateRangeAsync(start, end, false);
+
+			decimal total = 0;
+			foreach (var invoice in invoices)
+			{
+				total += invoice.TotalAmount;
+			}
+			return total;
+		}
     }
 }
