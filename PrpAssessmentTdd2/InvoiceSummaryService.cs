@@ -6,7 +6,8 @@ namespace PrpAssessmentTdd
     public class InvoiceSummaryService
     {
         private IInvoiceRepository _invoiceRepository;
-        public InvoiceSummaryService(IInvoiceRepository invoiceRepository) 
+
+		public InvoiceSummaryService(IInvoiceRepository invoiceRepository) 
         {
             _invoiceRepository = invoiceRepository;
         }
@@ -21,7 +22,7 @@ namespace PrpAssessmentTdd
 			{
 				total += invoice.TotalAmount;
 			}
-			return InvoiceSummaryService(i => i.To);
+			return total;
 		}
 
 
@@ -29,7 +30,10 @@ namespace PrpAssessmentTdd
 		{
 			var invoices = await _invoiceRepository.GetInvoicesByDateRangeAsync(start, end, false);
 
-			return 200;
+			return invoices
+					.Where(i => !string.IsNullOrWhiteSpace(i.Customer.Name) &&
+								i.Customer.Name.Equals(customerName, StringComparison.OrdinalIgnoreCase))
+					.Sum(i => i.TotalAmount);
 		}
 	}
 }
