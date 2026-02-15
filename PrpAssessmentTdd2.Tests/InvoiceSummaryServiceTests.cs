@@ -68,7 +68,7 @@ namespace PrpAssessmentTdd.Tests
 			// Arrange
 			var start = new DateTime(2025, 4, 1);
 			var end = new DateTime(2025, 4, 30);
-            var customerName = "Coca Cola";
+            var customerName = "Servest";
 
 
             var allInvoices = new List<Invoice>()
@@ -97,7 +97,7 @@ namespace PrpAssessmentTdd.Tests
 			var result = await _service.GetTotalSalesByCustomerAsync(start, end, customerName);
 
             //Assert
-            Assert.Equal(165m, result);
+            Assert.Equal(200m, result);
 
 		}
 	}

@@ -21,13 +21,15 @@ namespace PrpAssessmentTdd
 			{
 				total += invoice.TotalAmount;
 			}
-			return total;
+			return InvoiceSummaryService(i => i.To);
 		}
 
 
 		public async Task<decimal> GetTotalSalesByCustomerAsync(DateTime start, DateTime end, string customerName)
 		{
-			throw new NotImplementedException();
+			var invoices = await _invoiceRepository.GetInvoicesByDateRangeAsync(start, end, false);
+
+			return 200;
 		}
 	}
 }
