@@ -1,3 +1,4 @@
+using Castle.Core.Resource;
 using Moq;
 using PrpAssessmentTdd2.Models;
 using PrpAssessmentTdd2.RepositoryInterfaces;
@@ -59,6 +60,45 @@ namespace PrpAssessmentTdd.Tests
 
 			// Assert
 			Assert.Equal(250m, total);
+		}
+
+        [Fact]
+        public async Task FilterBy_Customer_Name_Return_InvoiceValue()
+        {
+			// Arrange
+			var start = new DateTime(2025, 4, 1);
+			var end = new DateTime(2025, 4, 30);
+            var customerName = "Coca Cola";
+
+
+            var allInvoices = new List<Invoice>()
+            {
+                new Invoice
+                {
+					IssueDate = new DateTime(2025, 4, 10),
+                    TotalAmount = 165m,
+                    Customer = new Party { Name = "Coca Cola"}
+                },
+				 new Invoice
+				{
+					IssueDate = new DateTime(2025, 4, 10),
+					TotalAmount = 200m,
+					Customer = new Party { Name = "Servest"}
+				},
+			};
+
+            _repositoryMock
+				.Setup(r => r.GetInvoicesByDateRangeAsync(
+					start, end, false))
+				.ReturnsAsync(allInvoices);
+
+
+            //Act
+			var result = await _service.GetTotalSalesByCustomerAsync(start, end, customerName);
+
+            //Assert
+            Assert.Equal(165m, result);
+
 		}
 	}
 }

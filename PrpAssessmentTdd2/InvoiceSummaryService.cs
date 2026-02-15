@@ -1,4 +1,5 @@
-﻿using PrpAssessmentTdd2.RepositoryInterfaces;
+﻿using PrpAssessmentTdd2.Models;
+using PrpAssessmentTdd2.RepositoryInterfaces;
 
 namespace PrpAssessmentTdd
 {
@@ -22,5 +23,11 @@ namespace PrpAssessmentTdd
 			}
 			return total;
 		}
-    }
+
+
+		public async Task<decimal> GetTotalSalesByCustomerAsync(DateTime start, DateTime end, string customerName)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

@@ -40,5 +40,6 @@ namespace PrpAssessmentTdd2.RepositoryInterfaces
         Task<Invoice?> GetByIdAsync(
             Guid invoiceId,
             bool includeLineItems = true);
+
     }
 }
