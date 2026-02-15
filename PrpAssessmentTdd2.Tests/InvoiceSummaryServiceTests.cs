@@ -100,5 +100,56 @@ namespace PrpAssessmentTdd.Tests
             Assert.Equal(200m, result);
 
 		}
+
+		[Fact]
+		public async Task FilterBy_Customer_Name_Return_Sum_Multiple_InvoiceValue()
+		{
+			// Arrange
+			var start = new DateTime(2025, 4, 1);
+			var end = new DateTime(2025, 4, 30);
+			var customerName = "Servest";
+
+
+			var allInvoices = new List<Invoice>()
+			{
+				 new Invoice
+				{
+					IssueDate = new DateTime(2025, 4, 10),
+					TotalAmount = 350m,
+					Customer = new Party { Name = "Servest"}
+				},
+				new Invoice
+				{
+					IssueDate = new DateTime(2025, 4, 10),
+					TotalAmount = 165m,
+					Customer = new Party { Name = "Coca Cola"}
+				},
+				 new Invoice
+				{
+					IssueDate = new DateTime(2025, 4, 10),
+					TotalAmount = 200m,
+					Customer = new Party { Name = "Servest"}
+				},
+				 new Invoice
+				{
+					IssueDate = new DateTime(2025, 4, 15),
+					TotalAmount = 150m,
+					Customer = new Party { Name = "Servest"}
+				},
+			};
+
+			_repositoryMock
+				.Setup(r => r.GetInvoicesByDateRangeAsync(
+					start, end, false))
+				.ReturnsAsync(allInvoices);
+
+
+			//Act
+			var result = await _service.GetTotalSalesByCustomerAsync(start, end, customerName);
+
+			//Assert
+			Assert.Equal(700m, result);
+
+		}
 	}
 }
