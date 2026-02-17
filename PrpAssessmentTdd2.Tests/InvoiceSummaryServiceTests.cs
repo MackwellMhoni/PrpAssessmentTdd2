@@ -151,5 +151,28 @@ namespace PrpAssessmentTdd.Tests
 			Assert.Equal(700m, result);
 
 		}
+
+		[Fact]
+		public async Task No_Line_Items_Exist()
+		{
+			//Arrange
+			var start = new DateTime(2025, 4, 5);
+			var end = new DateTime(2025, 4, 15);
+			var allInvoices = new List<Invoice>();
+
+			_repositoryMock
+				.Setup(r => r.GetInvoicesByDateRangeAsync(
+					start, end, false))
+				.ReturnsAsync(allInvoices);
+
+			// Act
+			var result = await _service.GetMostSoldProductCodeAsync(start, end);
+
+			// Assert
+			Assert.Equal(null, result);
+
+		}
+
+
 	}
 }

@@ -12,7 +12,7 @@ namespace PrpAssessmentTdd
             _invoiceRepository = invoiceRepository;
         }
 
-        public async Task<decimal> GetTotalInvoiceValueAsync(DateTime start, DateTime end)
+		public async Task<decimal> GetTotalInvoiceValueAsync(DateTime start, DateTime end)
         {
            
 			var invoices = await _invoiceRepository.GetInvoicesByDateRangeAsync(start, end, false);
@@ -25,7 +25,6 @@ namespace PrpAssessmentTdd
 			return total;
 		}
 
-
 		public async Task<decimal> GetTotalSalesByCustomerAsync(DateTime start, DateTime end, string customerName)
 		{
 			var invoices = await _invoiceRepository.GetInvoicesByDateRangeAsync(start, end, false);
@@ -34,6 +33,12 @@ namespace PrpAssessmentTdd
 					.Where(i => !string.IsNullOrWhiteSpace(i.Customer.Name) &&
 								i.Customer.Name.Equals(customerName, StringComparison.OrdinalIgnoreCase))
 					.Sum(i => i.TotalAmount);
+		}
+
+
+		public async Task<string> GetMostSoldProductCodeAsync(DateTime start, DateTime end)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
