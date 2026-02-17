@@ -1,5 +1,6 @@
 using Castle.Core.Resource;
 using Moq;
+using NuGet.Frameworks;
 using PrpAssessmentTdd2.Models;
 using PrpAssessmentTdd2.RepositoryInterfaces;
 
@@ -171,6 +172,37 @@ namespace PrpAssessmentTdd.Tests
 
 		}
 
+		[Fact]
+		public async Task Entry_of_one_Line_Item_()
+		{
+			//Arrange
+			var start = new DateTime(2025, 4, 5);
+			var end = new DateTime(2025, 4, 15);
 
+			var allInvoices = new List<Invoice>()
+			{
+				new Invoice
+				{
+					LineItems = new List<InvoiceLineItem>()
+					{
+						new InvoiceLineItem
+						{
+							ProductCode = "PO1",
+						}
+					}
+				}
+			};
+
+			_repositoryMock
+				.Setup(r => r.GetInvoicesByDateRangeAsync(start, end, false))
+				.ReturnsAsync(allInvoices);
+
+			//Act 
+			var result = await _service.GetMostSoldProductCodeAsync(start, end);
+
+			//Assert
+			Assert.Equal("PO1", result);
+
+		}
 	}
 }
