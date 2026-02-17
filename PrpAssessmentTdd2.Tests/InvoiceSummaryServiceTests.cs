@@ -204,5 +204,46 @@ namespace PrpAssessmentTdd.Tests
 			Assert.Equal("PO1", result);
 
 		}
+
+		[Fact]
+		public async Task Entry_of_1_Line_Items_Return_the_code_with_the_highest_value()
+		{
+			//Arrange
+			var start = new DateTime(2025, 4, 5);
+			var end = new DateTime(2025, 4, 15);
+
+			var allInvoices = new List<Invoice>()
+			{
+				new Invoice
+				{
+					LineItems = new List<InvoiceLineItem>()
+					{
+						new InvoiceLineItem
+						{
+							ProductCode = "PO1",
+							Quantity = 2,
+							UnitPrice = 100
+						},
+						new InvoiceLineItem
+						{
+							ProductCode = "PO2",
+							Quantity = 3,
+							UnitPrice = 150
+						}
+					}
+				}
+			};
+
+			_repositoryMock
+				.Setup(r => r.GetInvoicesByDateRangeAsync(start, end, false))
+				.ReturnsAsync(allInvoices);
+
+			//Act 
+			var result = await _service.GetMostSoldProductCodeAsync(start, end);
+
+			//Assert
+			Assert.Equal("PO2", result);
+
+		}
 	}
 }
