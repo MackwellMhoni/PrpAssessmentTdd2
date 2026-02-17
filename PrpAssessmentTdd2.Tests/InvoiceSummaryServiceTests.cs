@@ -52,11 +52,9 @@ namespace PrpAssessmentTdd.Tests
 				.Setup(r => r.GetInvoicesByDateRangeAsync(
 					start, end, false))
 				.ReturnsAsync(allInvoices);
-
-            var service = new InvoiceSummaryService(_repositoryMock.Object);
 			
             // Act
-			var total = await service.GetTotalInvoiceValueAsync(start, end);
+			var total = await _service.GetTotalInvoiceValueAsync(start, end);
 
 			// Assert
 			Assert.Equal(250m, total);

@@ -38,7 +38,7 @@ namespace PrpAssessmentTdd
 
 		public async Task<string> GetMostSoldProductCodeAsync(DateTime start, DateTime end)
 		{
-			throw new NotImplementedException();
+			return null;
 		}
 	}
 }
