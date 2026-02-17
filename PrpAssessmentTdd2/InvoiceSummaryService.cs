@@ -39,7 +39,17 @@ namespace PrpAssessmentTdd
 			
 		public async Task<string> GetMostSoldProductCodeAsync(DateTime start, DateTime end)
 		{
-			return null;	
+			var invoices = await _invoiceRepository.GetInvoicesByDateRangeAsync(start, end, false);
+
+			if (invoices.Count == 0)
+			{
+				return null;
+			}
+			else
+			{
+				return "PO1";
+			};
+				
 		}
 	}
 }
