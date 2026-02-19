@@ -1,5 +1,6 @@
 ﻿using PrpAssessmentTdd2.Models;
 using PrpAssessmentTdd2.RepositoryInterfaces;
+using System.Collections.Generic;
 
 namespace PrpAssessmentTdd
 {
@@ -36,20 +37,35 @@ namespace PrpAssessmentTdd
 		}
 
 
-			
+
 		public async Task<string> GetMostSoldProductCodeAsync(DateTime start, DateTime end)
 		{
 			var invoices = await _invoiceRepository.GetInvoicesByDateRangeAsync(start, end, false);
 
-			if (invoices.Count == 0)
+
+			if (invoices.Count == 0 || invoices == null)
 			{
 				return null;
 			}
-			else
+
+			var aggregate = new Dictionary<string, decimal>();
+			foreach (var invoice in invoices)
 			{
-				return "PO1";
-			};
-				
+				foreach (var lineItem in invoice.LineItems)
+				{
+					decimal subTotal = lineItem.Quantity * lineItem.UnitPrice;
+
+					if (aggregate.ContainsKey(lineItem.ProductCode))
+					{
+						aggregate[lineItem.ProductCode] += subTotal; //adds to existing value with same code
+					}
+					else
+					{
+						aggregate[lineItem.ProductCode] = subTotal; // adds new code and value
+					}
+				}
+			}
+			return aggregate.OrderByDescending(i => i.Value).FirstOrDefault().Key;
 		}
 	}
 }

@@ -11,7 +11,7 @@
         public InvoiceStatus Status { get; set; } = InvoiceStatus.Draft;
         public Party Supplier { get; set; } = new();
         public Party Customer { get; set; } = new();
-        public List<InvoiceLineItem> LineItems { get; set; } = new();        
+        public List<InvoiceLineItem> LineItems { get ; set; } = new();        
         public string? Reference { get; set; }                    
         public string? Notes { get; set; }
         public string? PaymentTerms { get; set; }                 

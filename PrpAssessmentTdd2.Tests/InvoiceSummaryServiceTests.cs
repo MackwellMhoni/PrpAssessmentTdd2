@@ -205,8 +205,10 @@ namespace PrpAssessmentTdd.Tests
 
 		}
 
+
+
 		[Fact]
-		public async Task Entry_of_1_Line_Items_Return_the_code_with_the_highest_value()
+		public async Task Entry_of_2_Line_Items_Return_the_code_with_the_highest_value()
 		{
 			//Arrange
 			var start = new DateTime(2025, 4, 5);
@@ -228,7 +230,7 @@ namespace PrpAssessmentTdd.Tests
 						{
 							ProductCode = "PO2",
 							Quantity = 3,
-							UnitPrice = 150
+							UnitPrice = 300,
 						}
 					}
 				}
