@@ -250,7 +250,7 @@ namespace PrpAssessmentTdd.Tests
 		}
 
 		[Fact]
-		public async Task Return_a_distinct_list_of_Customer_Name_strings_ordered_alphabetically()
+		public async Task Return_a_distinct_list_of_Customer_Name_strings()
 		{
 			//Arrange
 			var start = new DateTime(2025, 4, 5);
@@ -267,7 +267,7 @@ namespace PrpAssessmentTdd.Tests
 				}
 			};
 
-			var expectedNames = new List<string> { "Coca Cola" };
+			var expectedNames = new List<string> { allInvoices[0].Customer.Name };
 
 			_repositoryMock
 				.Setup(r => r.GetInvoicesByDateRangeAsync(start, end, false))
