@@ -324,5 +324,55 @@ namespace PrpAssessmentTdd.Tests
 			//Assert
 			Assert.Equal(expectedNames, result);
 		}
+
+		[Fact]
+		public async Task Filter_for_invoices_where_PaidDate_is_null_and_IssueDate()
+		{
+			//Arrange
+			var start = new DateTime(2026, 1, 1);
+			var end = new DateTime(2026, 2, 28);
+
+			var allInvoices = new List<Invoice>()
+			{
+				new Invoice
+				{
+					Customer = new Party { Name = "Coca Cola"},
+					PaidDate = new DateTime(),
+					IssueDate = new DateTime(2026, 1, 1),
+					Status = new InvoiceStatus { }
+				},
+
+				new Invoice
+				{
+					Customer = new Party { Name = "Baron"},
+					PaidDate = new DateTime(),
+					IssueDate = new DateTime(2026, 1, 2),
+					Status = new InvoiceStatus { }
+				},
+
+				new Invoice
+				{
+					Customer = new Party { Name = "Krispy Cream"},
+					PaidDate = new DateTime(2026, 2, 24),
+					IssueDate = new DateTime(2026, 2, 21),
+					Status = new InvoiceStatus { }
+				}
+			};
+
+			var expectedNames = new List<string>();
+			expectedNames.Add(allInvoices[0].Customer.Name);
+			expectedNames.Add(allInvoices[1].Customer.Name);
+			expectedNames.Sort();
+
+			_repositoryMock
+				.Setup(r => r.GetInvoicesByDateRangeAsync(start, end, false))
+				.ReturnsAsync(allInvoices);
+
+			//Act
+			var result = await _service.GetHighRiskCustomersAsync(start, end);
+
+			//Assert
+			Assert.Equal(expectedNames, result);
+		}
 	}
 }
