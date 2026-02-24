@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "PrpAssessmentTdd2.Tests\\InvoiceSummaryServiceTests.cs",
               "ToolTip": "C:\\Users\\mackwell.mhoni\\source\\repos\\PrpAssessmentTdd2\\PrpAssessmentTdd2.Tests\\InvoiceSummaryServiceTests.cs",
               "RelativeToolTip": "PrpAssessmentTdd2.Tests\\InvoiceSummaryServiceTests.cs",
-              "ViewState": "AgIAAGMBAAAAAAAAAAAcwG0BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANYAAAAAAAAAAAAmwAgBAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-16T06:17:25.297Z",
               "EditorCaption": ""
@@ -69,7 +69,7 @@
               "RelativeDocumentMoniker": "PrpAssessmentTdd2\\InvoiceSummaryService.cs",
               "ToolTip": "C:\\Users\\mackwell.mhoni\\source\\repos\\PrpAssessmentTdd2\\PrpAssessmentTdd2\\InvoiceSummaryService.cs",
               "RelativeToolTip": "PrpAssessmentTdd2\\InvoiceSummaryService.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAuwFAAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAuwEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-16T05:56:45.208Z",
               "EditorCaption": ""
@@ -82,9 +82,10 @@
               "RelativeDocumentMoniker": "PrpAssessmentTdd2\\Models\\Invoice.cs",
               "ToolTip": "C:\\Users\\mackwell.mhoni\\source\\repos\\PrpAssessmentTdd2\\PrpAssessmentTdd2\\Models\\Invoice.cs",
               "RelativeToolTip": "PrpAssessmentTdd2\\Models\\Invoice.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwBEAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAxwBsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T06:03:10.635Z"
+              "WhenOpened": "2026-01-16T06:03:10.635Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

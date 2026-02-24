@@ -261,7 +261,7 @@ namespace PrpAssessmentTdd.Tests
 				new Invoice
 				{
 					Customer = new Party { Name = "Coca Cola"},
-					PaidDate = new DateTime(),
+					PaidDate = null,
 					IssueDate = new DateTime(2025, 4, 10),
 					Status = new InvoiceStatus { }
 				}
@@ -292,7 +292,7 @@ namespace PrpAssessmentTdd.Tests
 				new Invoice
 				{
 					Customer = new Party { Name = "Coca Cola"},
-					PaidDate = new DateTime(),
+					PaidDate = null,
 					IssueDate = new DateTime(2025, 4, 10),
 					Status = new InvoiceStatus { }
 				},
@@ -300,7 +300,7 @@ namespace PrpAssessmentTdd.Tests
 				new Invoice
 				{
 					Customer = new Party { Name = "Baron"},
-					PaidDate = new DateTime(),
+					PaidDate = null,
 					IssueDate = new DateTime(2025, 4, 13),
 					Status = new InvoiceStatus { }
 				}
@@ -329,7 +329,7 @@ namespace PrpAssessmentTdd.Tests
 		public async Task Filter_for_invoices_where_PaidDate_is_null_and_IssueDate()
 		{
 			//Arrange
-			var start = new DateTime(2026, 1, 1);
+			var start = new DateTime(2025, 1, 1);
 			var end = new DateTime(2026, 2, 28);
 
 			var allInvoices = new List<Invoice>()
@@ -337,7 +337,7 @@ namespace PrpAssessmentTdd.Tests
 				new Invoice
 				{
 					Customer = new Party { Name = "Coca Cola"},
-					PaidDate = new DateTime(),
+					PaidDate = null,
 					IssueDate = new DateTime(2026, 1, 1),
 					Status = new InvoiceStatus { }
 				},
@@ -345,7 +345,7 @@ namespace PrpAssessmentTdd.Tests
 				new Invoice
 				{
 					Customer = new Party { Name = "Baron"},
-					PaidDate = new DateTime(),
+					PaidDate = null,
 					IssueDate = new DateTime(2026, 1, 2),
 					Status = new InvoiceStatus { }
 				},
@@ -353,7 +353,7 @@ namespace PrpAssessmentTdd.Tests
 				new Invoice
 				{
 					Customer = new Party { Name = "Krispy Cream"},
-					PaidDate = new DateTime(2026, 2, 24),
+					PaidDate = new DateTime(2026, 2, 21),
 					IssueDate = new DateTime(2026, 2, 21),
 					Status = new InvoiceStatus { }
 				}

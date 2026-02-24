@@ -72,12 +72,17 @@ namespace PrpAssessmentTdd
 		{
 			var invoices = await _invoiceRepository.GetInvoicesByDateRangeAsync(start, end, false);
 
+			var thirtyDaysAgo = DateTime.Today.AddDays(-30);
+
 			var customer_Names = new List<string>();
-			foreach (var inv in invoices)
+			foreach (var invoice in invoices)
 			{
-				customer_Names.Add(inv.Customer.Name);
+				if (invoice.PaidDate == null && invoice.IssueDate < thirtyDaysAgo)
+				{
+					customer_Names.Add(invoice.Customer.Name);
+					customer_Names.Sort();
+				}
 			}
-			customer_Names.Sort();
 			return customer_Names;
 		}
 	}
