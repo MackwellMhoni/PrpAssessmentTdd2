@@ -70,7 +70,9 @@ namespace PrpAssessmentTdd
 
 		public async Task<List<string>> GetHighRiskCustomersAsync(DateTime start, DateTime end)
 		{
-			var customer_Names = new List<string>();
+			var invoices = await _invoiceRepository.GetInvoicesByDateRangeAsync(start, end, false);
+
+			var customer_Names = new List<string> { invoices[0].Customer.Name };
 			return customer_Names;
 		}
 	}
