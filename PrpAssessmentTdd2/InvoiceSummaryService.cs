@@ -57,7 +57,7 @@ namespace PrpAssessmentTdd
 
 					if (aggregate.ContainsKey(lineItem.ProductCode))
 					{
-						aggregate[lineItem.ProductCode] += subTotal; //adds to existing value with same code
+						aggregate[lineItem.ProductCode] += subTotal; //ads to exii sting value with same code
 					}
 					else
 					{
@@ -66,6 +66,12 @@ namespace PrpAssessmentTdd
 				}
 			}
 			return aggregate.OrderByDescending(i => i.Value).FirstOrDefault().Key;
+		}
+
+		public async Task<List<string>> GetHighRiskCustomersAsync(DateTime start, DateTime end)
+		{
+			var customer_Names = new List<string>();
+			return customer_Names;
 		}
 	}
 }

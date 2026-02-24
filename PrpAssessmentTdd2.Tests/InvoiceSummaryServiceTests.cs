@@ -1,4 +1,5 @@
 using Castle.Core.Resource;
+using Microsoft.VisualBasic;
 using Moq;
 using NuGet.Frameworks;
 using PrpAssessmentTdd2.Models;
@@ -246,6 +247,37 @@ namespace PrpAssessmentTdd.Tests
 			//Assert
 			Assert.Equal("PO2", result);
 
+		}
+
+		[Fact]
+		public async Task Return_a_distinct_list_of_Customer_Name_strings_ordered_alphabetically()
+		{
+			//Arrange
+			var start = new DateTime(2025, 4, 5);
+			var end = new DateTime(2025, 4, 15);
+
+			var allInvoices = new List<Invoice>()
+			{
+				new Invoice
+				{
+					Customer = new Party { Name = "Coca Cola"},
+					PaidDate = new DateTime(),
+					IssueDate = new DateTime(2025, 4, 10),
+					Status = new InvoiceStatus { }
+				}
+			};
+
+			var expectedNames = new List<string> { "Coca Cola" };
+
+			_repositoryMock
+				.Setup(r => r.GetInvoicesByDateRangeAsync(start, end, false))
+				.ReturnsAsync(allInvoices);
+
+			//Act
+			var result = await _service.GetHighRiskCustomersAsync(start, end);
+
+			//Assert
+			Assert.Equal(expectedNames, result);
 		}
 	}
 }
